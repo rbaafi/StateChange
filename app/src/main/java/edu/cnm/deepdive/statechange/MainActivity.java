@@ -82,6 +82,9 @@ public class MainActivity extends AppCompatActivity {
 
   @Override
   protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+    final EditText editText = findViewById(R.id.editText);
+    CharSequence userText = savedInstanceState.getCharSequence("savedText");
+    editText.setText(userText);
     super.onRestoreInstanceState(savedInstanceState);
     Log.i(TAG, "onRestoreInstanceState");
   }
